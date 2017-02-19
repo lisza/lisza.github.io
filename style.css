@@ -1,0 +1,42 @@
+body {
+	background-color: #fafafa;
+	color: #1F1F26;
+	font-family: 'Muli', 'Open Sans', sans-serif;
+}
+
+footer {
+	border-top: 1pt solid #e5e5e5;
+	bottom: 0px;
+	margin: 10px auto;
+	padding: 20px 0;
+	position: relative;
+	max-width: 70%;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 60%;
+	padding: 20px 50px;
+}
+
+.splash {
+	margin: 80px auto 60px auto;
+}
+.splash h1 {
+	font-family: 'Ovo', serif;
+	line-height: 28pt;
+}
+
+#hi {
+	color: red;
+	font-size: 2em;
+}
+
+section {
+	border-top: 1pt solid gray;
+	margin-top: 50px;
+}
+
+.content-wrapper {
+	min-height: 360px;
+}
