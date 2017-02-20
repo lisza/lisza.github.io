@@ -22,9 +22,15 @@ main {
 .splash {
 	margin: 80px auto 60px auto;
 }
+
 .splash h1 {
 	font-family: 'Ovo', serif;
 	line-height: 28pt;
+}
+
+@media only screen and (max-width: 400px) {
+	h1 {font-size: inherit;}
+	.splash h1 {line-height: 14pt;}
 }
 
 #hi {
