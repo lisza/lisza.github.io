@@ -2,17 +2,8 @@
 <html>
 	<head>
 		<title>Color Meditation</title>
+		<script src="script.js"></script>
 	</head>
-	<body onload="myFunction()">
-		<script>
-			function random(min,max) {
-  			var num = Math.floor(Math.random()*(max-min)) + min;
-  			return num;
-			}
-			function myFunction() {
-				var randomColor = 'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) + ')';
-				document.body.style.background = randomColor;
-			};
-		</script>
+	<body onload="assignRandomColor()">
 	</body>
 </html>

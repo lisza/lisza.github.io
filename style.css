@@ -34,8 +34,9 @@ main {
 }
 
 #hi {
-	color: red;
+	color: #fafafa;
 	font-size: 2em;
+	transition: color 5s;
 }
 
 section {
