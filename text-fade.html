@@ -1,0 +1,70 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    .splash {
+      margin: 50px;
+    }
+  </style>
+</head>
+
+<div class="splash">
+  <h1>
+    <div class="example">
+      Two roads diverged in a yellow wood,
+      And sorry I could not travel both
+      And be one traveler, long I stood
+      And looked down one as far as I could
+      To where it bent in the undergrowth;
+
+      Then took the other, as just as fair,
+      And having perhaps the better claim,
+      Because it was grassy and wanted wear;
+      Though as for that the passing there
+      Had worn them really about the same,
+
+      And both that morning equally lay
+      In leaves no step had trodden black.
+      Oh, I kept the first for another day!
+      Yet knowing how way leads on to way,
+      I doubted if I should ever come back.
+
+      I shall be telling this with a sigh
+      Somewhere ages and ages hence:
+      Two roads diverged in a wood, and I—
+      I took the one less traveled by,
+      And that has made all the difference.
+    </div>
+  </h1>
+</div>
+
+<script>
+ var lines = $('.example').text().split('\n');
+ var words = []
+ for (var i = 0; i < lines.length; i++) {
+   var lineWords = lines[i].split(' ');
+   lineWords = lineWords.filter(function (word) {
+     return word.replace(/\s/, '').length > 0;
+   });
+   words = words.concat(lineWords);
+   words.push("\n");
+ }
+
+ $('.example').text("");
+
+ words.forEach(function(word, i) {
+   console.log("word = ", word, "i = ", i)
+   setTimeout(function () {
+     if (word == "\n") {
+       span = $('<br>');
+     } else {
+       var span = $('<span>').text(word + " ");
+     }
+     $('.example').append(span)
+     span.hide();
+     span.fadeIn(3000 * Math.random());
+   }, i * 100);
+ });
+
+ //fadeIn(0)
+</script>
