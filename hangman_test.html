@@ -1,12 +1,20 @@
 
 The secret word: <span id="board"></span>
 <br><br>
-<form onsubmit="handle(event)">
-  Guess a letter: <input type="text" id="letter">
+<form id="form", onsubmit="handle(event)">
+  Guess a letter: <input type="text">
 </form>
 
 
 <script>
+
+var form = document.getElementById("form");
+form.onsubmit = function() {
+  console.log("submitted.");
+  return false;
+}
+
+
 function Game() {
 
   this.pick_secret_word = function() {
