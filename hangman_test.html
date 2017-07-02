@@ -1,0 +1,80 @@
+
+The secret word: <span id="board"></span>
+<br><br>
+<form onsubmit="handle(event)">
+  Guess a letter: <input type="text" id="letter">
+</form>
+
+
+<script>
+function Game() {
+
+  this.pick_secret_word = function() {
+    var dict = ["hi", "hey", "hello"];
+    var secret_word = dict[Math.floor(Math.random() * dict.length)];
+    return secret_word;
+  }
+
+  this.display_board = function(board) {
+    document.getElementById("board").innerHTML = board;
+    console.log(board);
+  }
+
+  function handle(event) {
+    event.preventDefault(); //Ensure it is only this code that runs?
+    var letter = document.getElementById("letter").value;
+    console.log(letter);
+    this.play_turn(letter);
+  }
+
+  this.check_guess = function(letter) {
+    var indices = [];
+    for (var i = 0; i < secret_word.length; i++) {
+      if (secret_word[i] == letter) {
+        indices.push(i);
+      }
+    }
+
+    if (indices.length > 0) {
+      console.log("Your letter is in the word. Next one!");
+      console.log(indices);
+    } else {
+      console.log("Your letter wasn't found. Try again.");
+    }
+    return indices;
+  }
+
+  this.update_board = function(letter, indices) {
+    board_arr = this.board.split("");
+    for(var i=0; i < indices.length; i++) {
+      board_arr[indices[i]] = letter;
+    }
+    //console.log(board_arr.join(""));
+    return board_arr.join("");
+  }
+
+  var over = function() {
+    board == secret_word;
+  }
+
+  this.play_turn = function(letter) {
+    console.log(letter);
+    var indices = this.check_guess(letter);
+    var board = this.update_board(letter, indices);
+    this.display_board(board);
+  }
+
+  this.play = function() {
+    var secret_word = this.pick_secret_word();
+    console.log(secret_word);
+    var board = "_".repeat(secret_word.length);
+    this.display_board(board);
+  }
+
+}
+
+var g = new Game();
+g.play();
+
+
+</script>
