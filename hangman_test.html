@@ -2,17 +2,18 @@
 The secret word: <span id="board"></span>
 <br><br>
 <form id="form">
-  Guess a letter: <input type="text">
+  Guess a letter: <input type="text" id="letter">
 </form>
 
 
 <script>
 
-var form = document.getElementById("form");
+var letter = document.getElementById("letter");
 form.onsubmit = function() {
+  event.preventDefault();
   console.log("submitted.");
-  return false;
 }
+
 
 
 function Game() {
@@ -28,12 +29,12 @@ function Game() {
     console.log(board);
   }
 
-  function handle(event) {
-    event.preventDefault(); //Ensure it is only this code that runs?
-    var letter = document.getElementById("letter").value;
-    console.log(letter);
-    this.play_turn(letter);
-  }
+  // function handle(event) {
+  //   event.preventDefault(); //Ensure it is only this code that runs?
+  //   var letter = document.getElementById("letter").value;
+  //   console.log(letter);
+  //   this.play_turn(letter);
+  // }
 
   this.check_guess = function(letter) {
     var indices = [];
