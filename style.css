@@ -19,6 +19,24 @@ main {
 	padding: 20px 50px;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: unset;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+a {
+  text-transform: uppercase;
+  text-decoration-color: inherit;
+}
+
+a:visited {
+  color: dimgray;
+}
+
 .splash {
 	margin: 80px auto 60px auto;
 }
@@ -26,11 +44,6 @@ main {
 .splash h1 {
 	font-family: 'Ovo', serif;
 	line-height: 28pt;
-}
-
-@media only screen and (max-width: 400px) {
-	h1 {font-size: inherit;}
-	.splash h1 {line-height: 14pt;}
 }
 
 #hi {
@@ -46,4 +59,16 @@ section {
 
 .content-wrapper {
 	min-height: 360px;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    max-width: 85%;
+    padding: 0;
+  }
+
+	.splash h1 {
+    line-height: 1.2em;
+    font-size: 1.4em;
+  }
 }
