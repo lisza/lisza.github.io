@@ -71,4 +71,12 @@ section {
     line-height: 1.2em;
     font-size: 1.4em;
   }
+
+  footer {
+    max-width: 85%;
+  }
+
+  footer a {
+    text-transform: none;
+  }
 }
