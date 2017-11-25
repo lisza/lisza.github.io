@@ -29,7 +29,7 @@ li {
 }
 
 a {
-  color: inherit;
+  color: #1F1F26;
 }
 
 li a {
@@ -37,8 +37,7 @@ li a {
 }
 
 a:visited {
-  /*color: dimgray;*/
-  color: inherit;
+  color: dimgray;
 }
 
 .splash {
