@@ -29,8 +29,11 @@ li {
 }
 
 a {
-  text-transform: uppercase;
   text-decoration-color: inherit;
+}
+
+li a {
+  text-transform: uppercase;
 }
 
 a:visited {
@@ -74,9 +77,5 @@ section {
 
   footer {
     max-width: 85%;
-  }
-
-  footer a {
-    text-transform: none;
   }
 }
