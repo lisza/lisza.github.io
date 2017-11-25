@@ -15,4 +15,5 @@ function changeFontColor() {
   document.getElementById('hi').style.color = randomColor;
 };
 
-setInterval(changeFontColor, 10000);
+window.addEventListener('load', changeFontColor);
+setInterval(changeFontColor, 10000)
