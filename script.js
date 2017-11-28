@@ -16,4 +16,4 @@ function changeFontColor() {
 };
 
 window.addEventListener('load', changeFontColor);
-setInterval(changeFontColor, 10000)
+setInterval(changeFontColor, 10000);
