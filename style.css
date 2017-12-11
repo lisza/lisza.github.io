@@ -48,7 +48,7 @@ li a {
 }
 
 #hi {
-	color: #fafafa;
+	color: red;
 	font-size: 2em;
 	transition: color 5s ease-in;
 }
