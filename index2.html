@@ -12,80 +12,48 @@
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 		<title>lisza</title>
     <base target="_blank">
-		<link rel="stylesheet" type="text/css" href="style2.css">
-		<link href="https://fonts.googleapis.com/css?family=Muli|Ovo" rel="stylesheet">
-		<script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli|Ovo" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" href="css/animate.css">
+		<script src="js/script.js"></script>
+    <script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
 	</head>
 
 	<body>
 		<main>
-			<div class="splash animated fadeIn">
+			<div class="splash wow fadeIn">
         <h1 id="hi">Hi.</h1>
 				<h1>I'm Lisza and I am a software developer based in San Francisco, CA. I use JavaScript, React, Redux, HTML, CSS, Ruby, Rails, SQL, git.</h1>
 			</div> <!-- /.splash -->
 
-			<section class="projects animated fadeIn">
+			<section class="projects">
 				<h2>Projects</h2>
 				<ul>
-          <li>
+          <li class="wow fadeIn">
             <p><a href="http://storie.press">Storie.</a> Minimalist blogging app built with React.js/Redux and Rails/Postgres. Write something!</p>
           </li>
-					<li>
+					<li class="wow fadeIn">
             <p><a href="https://lisza.github.io/otherwords">Otherwords.</a> A webpage for visualizing translations, made with JavaScript, the Google Translate API, and some algorithms. Try it out!</p>
           </li>
-					<li>
+					<li class="wow fadeIn">
             <p><a href="color-meditation.html">Color meditation.</a> Look at a randomly generated color for a moment, or a while.</p>
           </li>
-          <li>
+          <li class="wow fadeIn">
             <p><a href="text-fade.html">Fade in.</a> Watch a poem appear.</li></p>
-          <li><p><a href="https://lisza.github.io/crowdfont">Crowdfont.</a> Ghostly alphabet that is the result of about 200 remote micro task contributors drawing letters on the screen. This was made as part of my new-hire demo at CrowdFlower Inc.<sup><a href="https://www.crowdflower.com/">1</a></sup></p></li>
+          <li class="wow fadeIn"><p><a href="https://lisza.github.io/crowdfont">Crowdfont.</a> Ghostly alphabet that is the result of about 200 remote micro task contributors drawing letters on the screen. This was made as part of my new-hire demo at CrowdFlower Inc.<sup><a href="https://www.crowdflower.com/">1</a></sup></p></li>
 				</ul>
 			</section>
 		</main>
 
-		<footer class="animated fadeIn"><small>
+		<footer><small class="wow fadeIn">
       © 2017 |
       <a href="https://github.com/lisza"> github/lisza</a> |
       <a href="https://linkedin.com/in/lisatogler"> LinkedIn</a> |
       <a href="https://twitter.com/cnsnts"> @cnsnts</a>
     </small></footer>
-
-    <!-- FadeIn on scroll script -->
-    <!-- <script>
-      // Debounce function, runs the function passed to it only every 20 ms
-      function debounce(func, wait = 20, immediate = true) {
-        var timeout;
-        return function() {
-          var context = this, args = arguments;
-          var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-          };
-          var callNow = immediate && !timeout;
-          clearTimeout(timeout);
-          timeout = setTimeout(later, wait);
-          if (callNow) func.apply(context, args);
-        };
-      }
-
-      // Get elements
-      const fadeInItems = document.querySelectorAll('.animated');
-
-      // Define checkFadeIn function
-      function checkFadeIn(e) {
-        fadeInItems.forEach(item => {
-          const fadeInAt = (window.scrollY + window.innerHeight)
-            - item.height / 2;
-          const itemBottom = item.offsetTop + item.height;
-          if (fadeInAt > item.offsetTop) {
-            item.classList.add('fadeIn');
-          }
-        })
-      }
-
-      // Add event listeners
-      window.addEventListener('scroll', debounce(checkFadeIn));
-    </script> -->
 
 	</body>
 </html>
