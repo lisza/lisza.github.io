@@ -49,8 +49,8 @@ li a {
 
 #hi {
 	color: red;
-	font-size: 2em;
-	transition: color 5s ease-in;
+	font-size: 3em;
+	transition: color 4s;
 }
 
 .projects {

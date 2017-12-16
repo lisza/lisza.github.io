@@ -42,7 +42,8 @@ li a {
 }
 
 .splash h1 {
-	font-family: 'Ovo', serif;
+	/*font-family: 'Ovo', serif;*/
+  /*font-family: "Gilroy-Bold", sans-serif;*/
   font-size: 2.4em;
 	line-height: 1.2em;
 }
