@@ -46,6 +46,10 @@ a:visited {
 	line-height: 1.2em;
 }
 
+.splash a {
+  color: dimgray;
+}
+
 #hi {
 	color: aquamarine;
 	font-size: 3em;
