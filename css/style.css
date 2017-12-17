@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
 	background-color: #fafafa;
 	color: #1F1F26;
@@ -8,7 +16,7 @@ main {
 	margin: 0 auto;
 	width: 60%;
   max-width: 760px;
-	padding: 20px 50px;
+	padding: 20px 0;
 }
 
 ul {
@@ -93,7 +101,7 @@ input[name="_gotcha"] {
   display: none;
 }
 
-.contact textarea {
+#contact textarea {
   height: 10.3em;
 }
 
