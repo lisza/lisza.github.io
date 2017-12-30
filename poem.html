@@ -45,12 +45,8 @@
         })
         .then(function(data) {
           const title = data.titles[titleIndex];
-          // console.log(title);
           getPoem(title);
         })
-        .catch(function(error) {
-          console.log('Poem could not be fetched :', error.message);
-        });
 
       // get poem data for a title through poetrydb.org
       function getPoem(title) {
@@ -64,8 +60,6 @@
       }
 
       function displayPoem({title, author, lines}) {
-        // console.log(title, author);
-        // console.log(lines);
         poemTitle.textContent = title;
         poemAuthor.textContent = author;
 
@@ -76,14 +70,12 @@
           poemContent = poemContent.concat(line);
           poemContent.push("\n")
         })
-        // console.log("poemContent: ", poemContent);
         fadeInPoem(poemContent);
       }
 
       // fade in action, using jQuery
       function fadeInPoem(words) {
         words.forEach(function(word, i) {
-          // console.log("word = ", word, "i = ", i)
           setTimeout(function () {
             if (word == "\n") {
               span = $('<br>');
