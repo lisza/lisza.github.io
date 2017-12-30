@@ -46,7 +46,9 @@
         .then(function(data) {
           const title = data.titles[titleIndex];
           getPoem(title);
-        })
+        }).catch(function(error) {
+          console.log('Poem could not be fetched :', error.message);
+        });
 
       // get poem data for a title through poetrydb.org
       function getPoem(title) {
