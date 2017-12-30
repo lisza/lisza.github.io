@@ -45,9 +45,12 @@
         })
         .then(function(data) {
           const title = data.titles[titleIndex];
-          console.log(title);
+          // console.log(title);
           getPoem(title);
         })
+        .catch(function(error) {
+          console.log('Poem could not be fetched :', error.message);
+        });
 
       // get poem data for a title through poetrydb.org
       function getPoem(title) {
@@ -74,7 +77,6 @@
           poemContent.push("\n")
         })
         // console.log("poemContent: ", poemContent);
-
         fadeInPoem(poemContent);
       }
 
@@ -90,8 +92,8 @@
             }
             $('.lines').append(span)
             span.hide();
-            span.fadeIn(3000 * Math.random());
-          }, i * 100);
+            span.fadeIn(4000 * Math.random());
+          }, i * 400);
         });
       }
 
