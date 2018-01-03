@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>a poem</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
       .poem {
@@ -13,7 +14,7 @@
       .poem-metadata {
         border-bottom: 1px solid;
         display: inline-block;
-        padding-left: 10px;
+        /* padding-left: 10px; */
         padding-bottom: 15px;
       }
 
@@ -33,7 +34,11 @@
         <div class="poem-title"></div>
         <div class="poem-author"></div>
       </div>
-      <div class="poem-lines"></div>
+      <div class="poem-lines">
+        <div class="poem-placeholder">
+          <i class="fas fa-spinner fa-pulse fa-2x"></i>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -94,6 +99,7 @@
 
       // fade in action, using jQuery
       function fadeInPoem(words) {
+        $('.poem-placeholder').hide();
         words.forEach(function(word, i) {
           setTimeout(function () {
             // Check for and insert line breaks
