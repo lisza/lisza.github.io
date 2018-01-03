@@ -6,23 +6,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
-      .splash {
+      .poem {
         margin: 50px;
+      }
+
+      .poem-metadata {
+        border-bottom: 1px solid;
+        display: inline-block;
+        padding-left: 10px;
+        padding-bottom: 15px;
+      }
+
+      .poem-lines {
+        font-family: 'Ovo', serif;
+        font-size: 2.4em;
+        font-weight: bold;
+      	line-height: 1.2em;
+        margin-top: 40px;
       }
     </style>
   </head>
 
   <body>
-    <div class="splash">
-      <div class="title"></div>
-      <div class="author"></div>
-      <h1><div class="lines"></div></h1>
+    <div class="poem">
+      <div class="poem-metadata">
+        <div class="poem-title"></div>
+        <div class="poem-author"></div>
+      </div>
+      <div class="poem-lines"></div>
     </div>
 
     <script>
-      const poemTitle = document.querySelector('.title');
-      const poemAuthor = document.querySelector('.author');
-      const poemLines = document.querySelector('.lines');
+      const poemTitle = document.querySelector('.poem-title');
+      const poemAuthor = document.querySelector('.poem-author');
+      const poemLines = document.querySelector('.poem-lines');
       const titleIndex = getRandomInt(0, 2973)
 
       // get random integer between 0-2997, the length of the titles
@@ -63,7 +80,7 @@
 
       function displayPoem({title, author, lines}) {
         poemTitle.textContent = title;
-        poemAuthor.textContent = author;
+        poemAuthor.textContent = `By ${author}`;
 
         // create array of poem words with line breaks at the end of each line
         let poemContent = []
@@ -79,12 +96,13 @@
       function fadeInPoem(words) {
         words.forEach(function(word, i) {
           setTimeout(function () {
+            // Check for and insert line breaks
             if (word == "\n") {
               span = $('<br>');
             } else {
               var span = $('<span>').text(word + " ");
             }
-            $('.lines').append(span)
+            $('.poem-lines').append(span)
             span.hide();
             span.fadeIn(4000 * Math.random());
           }, i * 400);
