@@ -38,6 +38,7 @@
         <div class="poem-placeholder">
           <i class="fas fa-spinner fa-pulse fa-2x"></i>
         </div>
+        <div class="poem-errors"><div>
       </div>
     </div>
 
@@ -69,7 +70,8 @@
           const title = data.titles[titleIndex];
           getPoem(title);
         }).catch(function(error) {
-          console.log('Poem could not be fetched :', error.message);
+          console.log('List of titles could not be accessed :', error.message);
+
         });
 
       // get poem data for a title through poetrydb.org
@@ -81,6 +83,11 @@
           .then(function(data) {
             displayPoem(data[0]);
           })
+          .catch(function(error) {
+            console.log('Poem could not be fetched :', error.message);
+            $('.poem-placeholder').hide();
+            $('.poem-errors').text('Poem could not be fetched. Try to reload!');
+          });
       }
 
       function displayPoem({title, author, lines}) {
