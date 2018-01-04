@@ -15,7 +15,7 @@
         border-bottom: 1px solid;
         display: inline-block;
         /* padding-left: 10px; */
-        padding-bottom: 15px;
+        padding-bottom: 25px;
       }
 
       .poem-lines {
@@ -25,15 +25,35 @@
       	line-height: 1.2em;
         margin-top: 40px;
       }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 25px;
+      }
+
+      .about {
+        color: darkseagreen;
+        font-size: smaller;
+        margin-bottom: 15px;
+        padding-left: 20px;
+      }
     </style>
   </head>
 
   <body>
     <div class="poem">
-      <div class="poem-metadata">
-        <div class="poem-title"></div>
-        <div class="poem-author"></div>
-      </div>
+      <header>
+        <div class="poem-metadata">
+          <div class="poem-title"></div>
+          <div class="poem-author"></div>
+        </div>
+
+        <div class="about">
+          This site was made by <a href="http://liszalisza.com">lisza</a>. Poems come from <a href="http://poetrydb.org">poetrydb's API</a>.
+        </div>
+      </header>
+
       <div class="poem-lines">
         <div class="poem-placeholder">
           <i class="fas fa-spinner fa-pulse fa-2x"></i>
@@ -46,7 +66,7 @@
       const poemTitle = document.querySelector('.poem-title');
       const poemAuthor = document.querySelector('.poem-author');
       const poemLines = document.querySelector('.poem-lines');
-      const titleIndex = getRandomInt(0, 2973)
+      const titleIndex = getRandomInt(0, 2973);
 
       // get random integer between 0-2997, the length of the titles
       // array in poetrybd.org
