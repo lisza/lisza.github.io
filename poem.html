@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <title>a poem</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
@@ -33,12 +34,33 @@
       }
 
       .about {
-        color: darkseagreen;
+        color: hotpink;
         font-size: smaller;
         margin-bottom: 15px;
         padding-left: 20px;
         text-align: right;
         width: 40%;
+      }
+
+      @media only screen and (max-width: 420px) {
+        .poem { margin: 15px; }
+
+        .poem-lines {
+          font-size: 1.6em;
+          margin-top: 20px;
+        }
+
+        header {
+          flex-direction: column-reverse;
+        }
+
+        .about {
+          padding-left: 0;
+          text-align: left;
+          width: 100%;
+        }
+
+        .poem-metadata { padding: 15px 0; }
       }
     </style>
   </head>
@@ -53,7 +75,7 @@
 
         <div class="about">
           Each time you go to this site a random poem will appear.
-          Coded by <a href="http://liszalisza.com">lisza</a>. Poems come from <a href="http://poetrydb.org">poetrydb's API</a>.
+          Coded by <a href="http://liszalisza.com">lisza</a>. Poems come from <a href="http://poetrydb.org">poetrydb</a>.
         </div>
       </header>
 
