@@ -104,10 +104,11 @@
       // Hacky fix: Use a CORS proxy to get around localhost
       // “No Access-Control-Allow-Origin header” problem :/
       // https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      // const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
       // get a random title from poetrydb.org using a random integer (titleIndex)
-      fetch(proxyurl + 'http://poetrydb.org/title')
+      // proxyurl +
+      fetch('http://poetrydb.org/title')
         .then(function(response) {
           return response.json();
         })
@@ -119,9 +120,10 @@
 
         });
 
+      // ${proxyurl}
       // get poem data for a title through poetrydb.org
       function getPoem(title) {
-        fetch(`${proxyurl}http://poetrydb.org/title/${title}`)
+        fetch(`http://poetrydb.org/title/${title}`)
           .then(function(response) {
             return response.json();
           })
