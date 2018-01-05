@@ -104,11 +104,10 @@
       // Hacky fix: Use a CORS proxy to get around localhost
       // “No Access-Control-Allow-Origin header” problem :/
       // https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141
-      // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
       // get a random title from poetrydb.org using a random integer (titleIndex)
-      // proxyurl +
-      fetch('http://poetrydb.org/title')
+      fetch(`${proxyurl}http://poetrydb.org/title`)
         .then(function(response) {
           return response.json();
         })
@@ -116,14 +115,14 @@
           const title = data.titles[titleIndex];
           getPoem(title);
         }).catch(function(error) {
-          console.log('List of titles could not be accessed :', error.message);
-
+          console.error('List of titles could not be accessed: ', error.message);
+          $('.poem-placeholder').hide();
+          $('.poem-errors').text(`List of titles could not be accessed: ${error.message}`);
         });
 
-      // ${proxyurl}
       // get poem data for a title through poetrydb.org
       function getPoem(title) {
-        fetch(`http://poetrydb.org/title/${title}`)
+        fetch(`${proxyurl}http://poetrydb.org/title/${title}`)
           .then(function(response) {
             return response.json();
           })
@@ -131,7 +130,7 @@
             displayPoem(data[0]);
           })
           .catch(function(error) {
-            console.log('Poem could not be fetched :', error.message);
+            console.error('Poem could not be fetched: ', error.message);
             $('.poem-placeholder').hide();
             $('.poem-errors').text('Poem could not be fetched. Try to reload!');
           });
