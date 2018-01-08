@@ -107,18 +107,35 @@
       const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
       // get a random title from poetrydb.org using a random integer (titleIndex)
-      fetch(`${proxyurl}http://poetrydb.org/title`)
+      console.time('Get title');
+      // To get titles from web API
+      // fetch(`${proxyurl}http://poetrydb.org/title`)
+      // To get titles locally, about 10 x faster
+      fetch('db/poem_titles.json')
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
           const title = data.titles[titleIndex];
+          console.timeEnd('Get title');
+          console.time('Get lines');
           getPoem(title);
         }).catch(function(error) {
           console.error('List of titles could not be accessed: ', error.message);
           $('.poem-placeholder').hide();
           $('.poem-errors').text(`List of titles could not be accessed: ${error.message}`);
         });
+
+      // AJAX/ jQuery option to get the JSON list of titles
+      // gives cross origin site error on Chrome if not run on server
+      // console.time('Get title');
+      // $.getJSON("db/poem_titles.json", function(data) {
+      //   console.log(data.titles[titleIndex]);
+      //   title = data.titles[titleIndex];
+      //   console.timeEnd('Get title');
+      //   console.time('Get lines');
+      //   getPoem(title);
+      // })
 
       // get poem data for a title through poetrydb.org
       function getPoem(title) {
@@ -127,6 +144,7 @@
             return response.json();
           })
           .then(function(data) {
+            console.timeEnd('Get lines');
             displayPoem(data[0]);
           })
           .catch(function(error) {
