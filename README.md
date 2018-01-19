@@ -1,3 +1,3 @@
 # lisza.github.io
-https://lisza.github.io/
-This is a personal webpage.
+http://liszalisza.com/
+This is my portfolio site.
